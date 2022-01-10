@@ -17,4 +17,8 @@ class ContatosController extends Controller
         ]);
         return 'Contato salvo!';
     }
+    public function ver(){
+        $contatos = Contato::all();
+        return view('agenda.lista_contatos',['contatos' => $contatos]);
+    }
 }
