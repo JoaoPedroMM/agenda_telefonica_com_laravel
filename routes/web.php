@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/contato/criar','ContatosController@criar');
 Route::post('/contato/criar','ContatosController@salvar')->name('salvar_contato');
 Route::get('/contato/lista','ContatosController@ver');
+Route::get('/contatos/excluir/{id}','ContatosController@deletar')->name('excluir_contato');

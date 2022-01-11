@@ -21,4 +21,9 @@ class ContatosController extends Controller
         $contatos = Contato::all();
         return view('agenda.lista_contatos',['contatos' => $contatos]);
     }
+    public function deletar($id){
+        $contato=Contato::findOrFail($id);
+        $contato->delete();
+        return 'Contato excluído!';
+    }
 }

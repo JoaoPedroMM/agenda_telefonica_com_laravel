@@ -8,15 +8,14 @@
 </head>
     <body>
         <table>
-        <tr><th>Nome</th><th>         </th><th>Número</th></tr>
+        <tr><th>Nome</th><th>Número</th></tr>
         @foreach($contatos as $contato)
             <tr>
                 <td>{{$contato->coluna_nome}}</td>
-                <td>---------</td>
                 <td>{{$contato->coluna_numero}}</td>
-                <td>---------</td>
-                <td>Editar</td>
-                <td>Excluir</td>
+                <td><a href="">Editar</a></td>
+                <td><a href="{{ route('excluir_contato', ['id'=>$contato->id])}}"
+                        title="Excluir contato de {{ $contato->coluna_nome }}">Excluir</a></td>
             </tr>
         @endforeach
     </body>
