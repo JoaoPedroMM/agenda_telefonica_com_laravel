@@ -26,4 +26,16 @@ class ContatosController extends Controller
         $contato->delete();
         return 'Contato excluído!';
     }
+    public function editar($id){
+        $contato = Contato::findOrFail($id);
+        return view('agenda.editar', ['contato' => $contato]);
+    }
+    public function atualizar(Request $request, $id){
+        $contato = Contato::findOrFail($id);
+        $contato->update([
+            'coluna_nome' => $request->coluna_nome,
+            'coluna_numero' => $request->coluna_numero,
+        ]);
+        return "Contato atualizado!";
+    }
 }

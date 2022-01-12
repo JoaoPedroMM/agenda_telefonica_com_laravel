@@ -13,8 +13,9 @@
             <tr>
                 <td>{{$contato->coluna_nome}}</td>
                 <td>{{$contato->coluna_numero}}</td>
-                <td><a href="">Editar</a></td>
-                <td><a href="{{ route('excluir_contato', ['id'=>$contato->id])}}"
+                <td><a href="{{ route('editar_contato', ['id'=>$contato->id]) }}"
+                        title="Editar contato de {{ $contato->coluna_nome }}">Editar</a></td>
+                <td><a href="{{ route('excluir_contato', ['id'=>$contato->id]) }}"
                         title="Excluir contato de {{ $contato->coluna_nome }}">Excluir</a></td>
             </tr>
         @endforeach
