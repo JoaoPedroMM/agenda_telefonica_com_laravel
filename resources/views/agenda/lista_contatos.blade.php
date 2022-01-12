@@ -19,5 +19,7 @@
                         title="Excluir contato de {{ $contato->coluna_nome }}">Excluir</a></td>
             </tr>
         @endforeach
+        </table>
+        <a href="{{ route('salvar_contato') }}">Criar novo contato</a>
     </body>
 </html>
