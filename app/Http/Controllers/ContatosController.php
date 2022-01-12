@@ -15,7 +15,7 @@ class ContatosController extends Controller
             'coluna_nome' => $request->coluna_nome,
             'coluna_numero' => $request->coluna_numero,
         ]);
-        return 'Contato salvo!';
+        return view('agenda.hub');
     }
     public function ver(){
         $contatos = Contato::all();
@@ -24,7 +24,7 @@ class ContatosController extends Controller
     public function deletar($id){
         $contato=Contato::findOrFail($id);
         $contato->delete();
-        return 'Contato excluído!';
+        return view('agenda.hub');
     }
     public function editar($id){
         $contato = Contato::findOrFail($id);
@@ -36,6 +36,6 @@ class ContatosController extends Controller
             'coluna_nome' => $request->coluna_nome,
             'coluna_numero' => $request->coluna_numero,
         ]);
-        return "Contato atualizado!";
+        return view('agenda.hub');
     }
 }

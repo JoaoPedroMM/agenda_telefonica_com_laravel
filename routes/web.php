@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/contato/criar','ContatosController@criar');
 Route::post('/contato/criar','ContatosController@salvar')->name('salvar_contato');
-Route::get('/contato/lista','ContatosController@ver');
+Route::get('/contato/lista','ContatosController@ver')->name('lista_de_contatos');
 Route::get('/contato/excluir/{id}','ContatosController@deletar')->name('excluir_contato');
 Route::get('/contato/editar/{id}','ContatosController@editar')->name('editar_contato');
 Route::post('/contato/editar/{id}','ContatosController@atualizar')->name('atualizar_contato');
